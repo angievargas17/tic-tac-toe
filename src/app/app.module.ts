@@ -5,7 +5,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PartidaComponent } from './partida/partida.component';
+import { HomeComponent } from './home/home.component';
+import { GameComponent } from './game/game.component';
 var config= {
   apiKey: "AIzaSyAU_VZPWdY30B8XwcS4uO29cRTzqaMJ340",
   authDomain: "tic-tac-toe-b5e90.firebaseapp.com",
@@ -20,7 +21,8 @@ var config= {
 @NgModule({
   declarations: [
     AppComponent,
-    PartidaComponent
+    HomeComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,
