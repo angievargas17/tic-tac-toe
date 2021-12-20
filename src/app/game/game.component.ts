@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { recordCircle } from 'ngx-bootstrap-icons';
+
+
 
 
 @Component({
@@ -47,6 +48,7 @@ export class GameComponent implements OnInit {
   partida! : string;
   posicion! : any;
   game:any;
+  jugador1!: string;
 
 
 constructor(private route: ActivatedRoute,private db:AngularFirestore) {
@@ -54,6 +56,9 @@ constructor(private route: ActivatedRoute,private db:AngularFirestore) {
     this.id = this.route.snapshot.params['id'];
     this.jugador = this.route.snapshot.params['jugador'];
     this.icono = this.route.snapshot.params['icono'];
+    // this.posicion = window.localStorage.getItem('posActual')
+    
+    
 }
 
   ngOnInit(): void {
@@ -61,36 +66,31 @@ constructor(private route: ActivatedRoute,private db:AngularFirestore) {
 
   /**
    * dataGame
+   * Funcion para traer los datos de la partida
    */
   dataGame() {
+    this.posicion = {};
+   
     this.db.collection('game').doc(this.id).get().forEach(data=>{
           this.partida = data.id;
           this.posicion = data.data();
           
-          
     })
-    let arreglo = this.posicion['posicion'];
-    
-    // let claves = Object.keys(arreglo['posicion']);
-    //  console.log(arreglo);
-    // for(let i=0; i< arreglo.length; i++){
-    //   let clave = arreglo[i];
-    //   return clave;
-    // }
+    let arreglo = this.posicion;
     return arreglo;
-    
 
-     
   }
  
 
   /**
    * gameInPlay
+   * Funcion para validar posiciones y asignar icono segun el criterio 
    */
   public gameInPlay(icon: string, position: number) {
-  console.log(this.dataGame());
-
-    if(position == 1){
+    
+    this.dataGame();
+  
+    if(position == 1){      
         this.savePosition(this.id,1);
       if(icon == '1'){
         this.cuadrado1 = false;
@@ -100,7 +100,7 @@ constructor(private route: ActivatedRoute,private db:AngularFirestore) {
         this.letrax1 = false;
       }
 
-    }else if(position == 2){
+    }else if(position == 2){      
       this.savePosition(this.id,2);
       if(icon == '1'){
         this.cuadrado2 = false;
@@ -185,9 +185,11 @@ constructor(private route: ActivatedRoute,private db:AngularFirestore) {
   }
 
   /**
-   * name
+   * Funcion para guardar las posiciones seleccionadas segun la partida
+   * savePosition
    */
    savePosition(id: any ,seleccionado: any) {
+     window.localStorage.setItem('posActual', seleccionado);
     this.db.collection('game').doc(id).update({
       posicion : [seleccionado]
     })

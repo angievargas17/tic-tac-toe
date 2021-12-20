@@ -17,6 +17,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Funcion para tomar los parametros iniciales de la partida
+   * game
+   */
   public game() {
     const id =Math.random().toString(36).substring(2);
     
@@ -39,6 +43,10 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  /**
+   * Funcion para seleccionar el icono de la partida 
+   * selectFigure
+   */
   selectFigure(id: any){
     Swal.fire({
       title: '<strong>Seleccione su icono!</strong>',
@@ -66,7 +74,8 @@ export class HomeComponent implements OnInit {
   
 
   /**
-   * name
+   * Funcion para guardar una nueva partida
+   * saveGame
    */
   saveGame(identificador: any, figure : any) {
     this.db.collection('game').doc(identificador).set({

@@ -2,26 +2,25 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
+## Instalacion
+
+Para su correcta instalacion corra el comando 'npm install'  una vez este el proyecto en su equipo, necesita tener instalado una version de node js puede descargarla de aqui 'https://nodejs.org/es/download/releases/' 
+
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+El aplicativo se inicia con el comando 'ng serve --open' y se visualizara desde la url  `http://localhost:4200/`
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Instrucciones
 
-## Build
+Para iniciar un partida es necesario que de clic en el boton de nueva partida 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Seleccione el icono con el que desea jugar
 
-## Running unit tests
+Espere que el otro jugador se conecte 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+La idea es que apenas se completen una linea recta con el mismo icono se 
 
-## Running end-to-end tests
+indicara cual es el ganador , tiene la opcion de guardar el nombre del jugador.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+El creador de la partida siempre sera jugador uno y el que se une sera jugador dos.
