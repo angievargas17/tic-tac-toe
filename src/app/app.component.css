@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(10, 10, 10);
+  }
+
+.container{
+    position: relative;
+}
+
+h1{
+    color: deepskyblue;
+    text-align: center;
+}
+
+.card-body{
+    text-align: center;
+}

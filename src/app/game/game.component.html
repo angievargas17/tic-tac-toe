@@ -1,1 +1,120 @@
-<p>game works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+          <br><br>
+          <h1><b>TIC TAC TOE </b></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-body">
+              <!--<h1><b>  PARTIDA EN JUEGO</b></h1>-->
+              <br><br>
+              <div class="row">
+                <div class="col-sm-3">
+                  <div class="card">
+                    <div class="card-body">
+                        <div class="row" id="player1">
+                            <div class="col-sm-12">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="JUGADOR 1" aria-label="JUGADOR 1" aria-describedby="button-addon2">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Guardar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h3>INTENTOS RESTANTES</h3>
+                            {{jugador}}
+                        </div>
+                        <br>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                      <div class="card-body">
+                        <h1><b>  PARTIDA EN JUEGO</b></h1>
+                        <div class="row">
+                            <div class="row row-cols-3">
+                                <div class="col">
+                                  <img  [hidden]="!cuadrado1" src="/assets/image/rectangulo.png" (click)="gameInPlay(icono,1)" id="cuadrado1">
+                                  <img  [hidden]="circulo1" src="/assets/image/circulo.png"  id="circulo1">
+                                  <img  [hidden]="letrax1" src="/assets/image/letrax.png"  id="letrax1">
+                                </div>
+                                <div class="col">
+                                  <img [hidden]="!cuadrado2" src="/assets/image/rectangulo.png" (click)="gameInPlay(icono,2)" id="cuadrado2">
+                                  <img [hidden]="circulo2" src="/assets/image/circulo.png"  id="circulo2">
+                                  <img [hidden]="letrax2" src="/assets/image/letrax.png"  id="letrax2">
+                                </div>
+                                <div class="col">
+                                  <img [hidden]="!cuadrado3" src="/assets/image/rectangulo.png" (click)="gameInPlay(icono,3)" id="cuadrado3">
+                                  <img [hidden]="circulo3" src="/assets/image/circulo.png"  id="circulo3">
+                                  <img [hidden]="letrax3" src="/assets/image/letrax.png"  id="letrax3">
+                                </div>
+                                <div class="col">
+                                  <img [hidden]="!cuadrado4" src="/assets/image/rectangulo.png" (click)="gameInPlay(icono,4)" id="cuadrado4">
+                                  <img [hidden]="circulo4" src="/assets/image/circulo.png"  id="circulo4">
+                                  <img [hidden]="letrax4" src="/assets/image/letrax.png"  id="letrax4">
+                                </div>
+                                <div class="col">
+                                  <img [hidden]="!cuadrado5" src="/assets/image/rectangulo.png" (click)="gameInPlay(icono,5)" id="cuadrado5">
+                                  <img [hidden]="circulo5" src="/assets/image/circulo.png"  id="circulo5">
+                                  <img [hidden]="letrax5" src="/assets/image/letrax.png"  id="letrax5">
+                                </div>
+                                <div class="col">
+                                  <img [hidden]="!cuadrado6" src="/assets/image/rectangulo.png" (click)="gameInPlay(icono,6)" id="cuadrado6">
+                                  <img [hidden]="circulo6" src="/assets/image/circulo.png"  id="circulo6">
+                                  <img [hidden]="letrax6" src="/assets/image/letrax.png"  id="letrax6">
+                                </div>
+                                <div class="col">
+                                  <img [hidden]="!cuadrado7" src="/assets/image/rectangulo.png" (click)="gameInPlay(icono,7)" id="cuadrado7">
+                                  <img [hidden]="circulo7" src="/assets/image/circulo.png"  id="circulo7">
+                                  <img [hidden]="letrax7" src="/assets/image/letrax.png"  id="letrax7">
+                                </div>
+                                <div class="col">
+                                  <img [hidden]="!cuadrado8" src="/assets/image/rectangulo.png" (click)="gameInPlay(icono,8)" id="cuadrado8">
+                                  <img [hidden]="circulo8" src="/assets/image/circulo.png"  id="circulo8">
+                                  <img [hidden]="letrax8" src="/assets/image/letrax.png"  id="letrax8">
+                                </div>
+                                <div class="col">
+                                  <img [hidden]="!cuadrado9" src="/assets/image/rectangulo.png" (click)="gameInPlay(icono,9)" id="cuadrado9">
+                                  <img [hidden]="circulo9" src="/assets/image/circulo.png"  id="circulo9">
+                                  <img [hidden]="letrax9" src="/assets/image/letrax.png"  id="letrax9">
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <button type="button" class="btn btn-secondary">Jugar</button>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="row" id="player2">
+                            <div class="col-sm-12">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="JUGADOR 2" aria-label="JUGADOR 1" aria-describedby="button-addon2">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Guardar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h3>INTENTOS RESTANTES</h3>
+                        </div>
+                        <br>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
